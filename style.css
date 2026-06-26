@@ -68,8 +68,6 @@ body {
   left: 0;
   width: 100%;
   padding: 15px 20px;
-  background: rgba(244, 237, 228, 0.85);
-  backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
