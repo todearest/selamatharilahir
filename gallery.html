@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Dinding Cerita Kita</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="page-transition"></div>
+    <div class="film-grain"></div>
+
+    <div id="music-player" class="vintage-radio">
+      <button id="music-btn" class="radio-btn">
+        <div class="record-grooves"></div>
+      </button>
+      <div class="music-info">
+        <span class="music-title">Kita Usahakan Rumah Itu</span>
+        <span class="music-artist">Sal Pribadi</span>
+      </div>
+    </div>
+
+    <div id="polaroid-modal" class="polaroid-modal hidden">
+      <div class="modal-backdrop" id="modal-close-bg"></div>
+      <div class="modal-polaroid-frame">
+        <button class="modal-close-btn" id="modal-close-btn">×</button>
+        <img id="modal-img" src="" alt="Moment Kita" />
+        <p id="modal-caption" class="modal-caption"></p>
+      </div>
+    </div>
+
+    <div id="app-content">
+      <nav class="header-nav">
+        <a href="index.html" class="back-pill-btn" data-nav
+          >← Kembali ke Jalan</a
+        >
+      </nav>
+
+      <main class="ny-container container-top-padding">
+        <header class="poetic-text-block reveal visible">
+          <h2 class="main-title">Dinding Cerita</h2>
+          <p class="main-sub" style="max-width: 95%">
+            Ketuk setiap batu bata di mural hati ini untuk membuka memori manis
+            kita.
+          </p>
+        </header>
+
+        <section class="heart-mural-wrapper reveal">
+          <div class="heart-mural-box">
+            <svg viewBox="0 0 100 100" class="heart-svg">
+              <path
+                d="M 50,30 C 50,30 40,10 20,20 C 0,30 10,60 50,85 C 90,60 100,30 80,20 C 60,10 50,30 50,30 Z"
+              />
+            </svg>
+
+            <div
+              class="brick-node node-1"
+              data-src="asset/1.jpg"
+              data-caption="Kamu orang favoriteku. Tempat ternyamanku untuk jadi diriku sendiri."
+            >
+              <span class="brick-texture">01</span>
+            </div>
+
+            <div
+              class="brick-node node-2"
+              data-src="asset/3.jpg"
+              data-caption="Gak peduli seberapa jauh perjalanannya, asal duduknya di sebelah kamu. Satu semesta juga siap aku lalui."
+            >
+              <span class="brick-texture">02</span>
+            </div>
+
+            <div
+              class="brick-node node-3"
+              data-src="asset/2.jpg"
+              data-caption="Hari ulang tahunmu selalu menjadi pengingat sebaik apa Tuhan padaku. Memberikan aku tempat bersandar di tengah riuhnya dunia."
+            >
+              <span class="brick-texture">03</span>
+            </div>
+
+            <div
+              class="brick-node node-4"
+              data-src="asset/4.jpg"
+              data-caption="Dunia ini ga akan pernah tau seberapa bahagianya kita. Karena gak akan ada kata cukup untuk menampung semua tawa yang kamu kasih."
+            >
+              <span class="brick-texture">04</span>
+            </div>
+          </div>
+        </section>
+
+        <footer class="ambient-deco-footer reveal">
+          <div class="deco-row">
+            <div class="deco-thumbnail">
+              <img
+                src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTR6OXFwaTlsMGxiazJjczN0MXNnNncwN28wd2x6NmZuOHFuanBlcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rzbDB81HEyoFLzwsjz/giphy.gif"
+                alt="Deco"
+                onerror="this.src = 'https://picsum.photos/150/150'"
+              />
+            </div>
+            <div class="deco-thumbnail">
+              <img
+                src="asset/8.jpg"
+                alt="Deco"
+                onerror="this.src = 'https://picsum.photos/150/150'"
+              />
+            </div>
+          </div>
+          <div class="quote-vertical-divider"></div>
+          <p class="prose-cozy">
+            "Sebab kenyamanan rumah gak pernah berupa bangunan, melainkan
+            ingatan tentang kamu."
+          </p>
+
+          <a
+            href="birthday.html"
+            class="subway-token-btn"
+            style="max-width: 350px; margin: 0 auto"
+            data-nav
+          >
+            <span class="token-number">→</span>
+            <div class="token-text">
+              <h3>Lanjut Melangkah</h3>
+              <p>Buka surat & nyalakan harapan</p>
+            </div>
+          </a>
+        </footer>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

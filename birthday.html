@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Selamat Ulang Tahun, Cintaku</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="page-transition"></div>
+    <div class="film-grain"></div>
+
+    <div id="music-player" class="vintage-radio">
+      <button id="music-btn" class="radio-btn">
+        <div class="record-grooves"></div>
+      </button>
+      <div class="music-info">
+        <span class="music-title">Kita Usahakan Rumah Itu</span>
+        <span class="music-artist">Sal Pribadi</span>
+      </div>
+    </div>
+
+    <div id="app-content">
+      <nav class="header-nav" id="birthday-nav">
+        <a
+          href="index.html"
+          class="back-pill-btn dark-mode-back-pill"
+          id="bday-back-link"
+          >← Kembali ke Jalan</a
+        >
+      </nav>
+
+      <main class="ny-container container-top-padding" id="main-bday-container">
+        <div class="dark-room-overlay" id="dark-room">
+          <div class="candle-ritual-box">
+            <h2 class="main-title text-light">
+              Saatnya nyalakan lilin sayang!
+            </h2>
+            <p class="elegant-meta text-light" style="color: var(--ny-latte)">
+              Semoga segala yang kamu harapkan disediakan untukmu dengan versi
+              terbaik di waktu yang semestinya ♡
+              <br />
+
+              <br />Ketuk lilinnya yaa...
+            </p>
+
+            <div class="floating-candle candle-top" id="main-candle">
+              <div class="candle-body-vntg small-candle">
+                <div class="candle-wick-vntg" id="main-candle-wick"></div>
+                <div
+                  class="candle-flame-vntg hidden"
+                  id="main-candle-flame"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="illuminated-room-box hidden" id="letter-section">
+          <p class="elegant-meta">Hari Spesialmu, Yang Selalu Aku Syukuri.</p>
+          <h2 class="main-title">
+            Untuk Kamu,<br /><span class="highlight-warm"
+              >Penyemangat Hidupku.</span
+            >
+          </h2>
+
+          <div class="poetic-letter-body">
+            <p>
+              Sembari ada lagu yang mengalun pelan, aku ingin nyampain sesuatu
+              buatmu. <em>"Kita usahakan rumah itu..."</em> Kalimat yang simpel,
+              tapi tiap denger lirik itu, cuma wajah kamu yang muncul di
+              pikiranku.
+            </p>
+
+            <p>
+              Di hari bertambahnya usiamu ini, aku mau berhenti sebentar dari
+              sibuknya dunia buat bilang: Terima kasih banyak. Terima kasih udah
+              lahir, udah tumbuh jadi orang yang sabar banget, dan selalu bisa
+              bikin aku merasa aman.
+            </p>
+
+            <div class="touch-to-light-box" id="secret-touch-area">
+              <div class="touch-cover-mask" id="secret-mask">
+                <p class="elegant-meta text-light">Find Something Here...</p>
+              </div>
+              <div class="touch-revealed-content">
+                <p class="prose-cozy text-light" style="margin: 0">
+                  "Aku sayang banget sama kamu. Di antara semua yang gak pasti,
+                  kamu adalah kepastian yang gak pernah ingin aku lepasin."
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Hidup ke depan mungkin gak akan selalu mulus. Pasti ada capeknya,
+              ada penatnya. Tapi seperti janji di lagu itu, yuk kita usahakan
+              semuanya berdua. Kita bangun definisi 'rumah' kita sendiri—tempat
+              di mana kita bisa merebahkan lelah tanpa cemas.
+            </p>
+
+            <div class="art-photo-row">
+              <div class="handholding-frame tilt-left">
+                <img
+                  src="asset/10.jpg"
+                  alt="Holding hands"
+                  onerror="this.src = 'https://picsum.photos/300/400'"
+                />
+              </div>
+              <div
+                class="handholding-frame tilt-right"
+                style="margin-top: 40px"
+              >
+                <img
+                  src="asset/11.jpg"
+                  alt="Holding hands"
+                  onerror="this.src = 'https://picsum.photos/301/400'"
+                />
+              </div>
+            </div>
+            <p class="script-caption">Langkah kita, selamanya berdua.</p>
+
+            <p>
+              Semoga di umur yang baru ini, langkahmu dipermudah. Semoga
+              cita-citamu terwujud, dan semoga aku bisa terus ada di sebelah
+              kamu buat ngerayain setiap keberhasilan itu.
+            </p>
+
+            <p class="letter-final-sign">
+              Selamat ulang tahun, cintaku.<br />Rumah terbaik tempatku pulang.
+            </p>
+
+            <div class="letter-footer-actions">
+              <h3
+                class="main-title"
+                style="font-size: 2rem; color: var(--text-dark)"
+              >
+                Ada Satu Lilin Lagi Untuk Kamu Nyalain...
+              </h3>
+              <p class="elegant-meta" style="color: var(--ny-terracotta)">
+                Ketuk lilin ini untuk membuka gulungan harapan.
+              </p>
+
+              <div class="floating-candle candle-bottom" id="reveal-candle">
+                <div class="candle-body-vntg small-candle">
+                  <div class="candle-wick-vntg" id="reveal-candle-wick"></div>
+                  <div
+                    class="candle-flame-vntg hidden"
+                    id="reveal-candle-flame"
+                  ></div>
+                </div>
+              </div>
+
+              <div style="margin-top: 20px">
+                <a href="index.html" class="back-pill-btn" data-nav
+                  >← Kembali ke Jalan</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="secret-letters-section hidden" id="wishes-section">
+          <h3
+            class="main-title text-light"
+            style="font-size: 2.2rem; text-align: center"
+          >
+            Harapan Untukmu
+          </h3>
+          <p
+            class="elegant-meta text-light"
+            style="color: var(--ny-latte); text-align: center"
+          >
+            Ketuk setiap gulungan untuk membacanya
+          </p>
+
+          <div class="rolled-letters-container">
+            <div class="rolled-letter">
+              <div class="letter-cover">
+                <span class="scroll-icon">📜</span>
+                <span class="cover-text">Harapanku Untuk Langkahmu</span>
+              </div>
+              <div class="letter-content">
+                <p>
+                  Semoga setiap langkahmu ke depannya selalu diiringi kemudahan,
+                  dijauhkan dari ragu, dan dipeluk kebahagiaan.
+                </p>
+              </div>
+            </div>
+
+            <div class="rolled-letter">
+              <div class="letter-cover">
+                <span class="scroll-icon">📜</span>
+                <span class="cover-text">Doaku untuk mimpimu</span>
+              </div>
+              <div class="letter-content">
+                <p>
+                  Semoga mimpimu satu per satu terwujud, dan aku ada di
+                  sebelahmu merayakan setiap kemenangannya.
+                </p>
+              </div>
+            </div>
+
+            <div class="rolled-letter">
+              <div class="letter-cover">
+                <span class="scroll-icon">📜</span>
+                <span class="cover-text">Inginku Untuk Hatimu</span>
+              </div>
+              <div class="letter-content">
+                <p>
+                  Semoga sabarmu tidak pernah terkikis, dan hatimu selalu
+                  menemukan alasan untuk merasa cukup dan bersyukur.
+                </p>
+              </div>
+            </div>
+
+            <div class="rolled-letter">
+              <div class="letter-cover">
+                <span class="scroll-icon">📜</span>
+                <span class="cover-text">Semogaku untuk Rumah Kita</span>
+              </div>
+              <div class="letter-content">
+                <p>
+                  Semoga 'rumah' yang kita usahakan segera terbangun nyata,
+                  senyaman caramu membuatku merasa aman selama ini.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

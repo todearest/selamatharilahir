@@ -1,0 +1,855 @@
+/* ============================================
+   NEW YORK FINE-ART & POETIC AESTHETIC
+   ============================================ */
+
+:root {
+  --ny-espresso: #1f1411;
+  --ny-mocha: #3d261d;
+  --ny-terracotta: #8a4f35;
+  --ny-ochre: #b58d63;
+  --ny-latte: #d1bfae;
+  --ny-cream: #f4ede4;
+  --text-dark: #241814;
+  --text-muted: #736058;
+
+  --font-serif: "Playfair Display", serif;
+  --font-body:
+    "Cormorant Garamond", serif; /* Ganti ke Cormorant agar lebih flowy */
+  --font-script: "Great Vibes", cursive; /* Teks tulisan tangan romantis */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-body);
+  background-color: var(--ny-espresso);
+  color: var(--ny-cream);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- FILM GRAIN --- */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--ny-espresso);
+  z-index: 99999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+#page-transition.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* --- FIXED HEADER NAV --- */
+.header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(244, 237, 228, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+#birthday-nav {
+  background: rgba(31, 20, 17, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.back-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--ny-latte);
+  padding: 8px 18px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  letter-spacing: 1px;
+}
+.back-pill-btn:hover {
+  background: var(--ny-terracotta);
+  color: white;
+}
+.dark-mode-back-pill {
+  color: var(--ny-cream);
+  background: var(--ny-mocha);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- MUSIC PLAYER --- */
+.vintage-radio {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--ny-cream);
+  border: 1px solid var(--ny-latte);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 40px;
+  z-index: 9990;
+}
+.radio-btn {
+  width: 36px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid var(--ny-espresso);
+  background: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.record-grooves {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #111;
+}
+.playing .record-grooves {
+  animation: rotateVinyl 2.5s linear infinite;
+}
+@keyframes rotateVinyl {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.music-info {
+  display: flex;
+  flex-direction: column;
+}
+.music-title {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+.music-artist {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-style: italic;
+  color: var(--ny-terracotta);
+}
+
+/* ============================================
+   GLOBAL POETIC LAYOUT
+   ============================================ */
+.ny-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 12vh 20px 140px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+.container-top-padding {
+  padding-top: 120px !important;
+}
+
+/* ============================================
+   HERO: FOTO KECIL SWAYING
+   ============================================ */
+.ny-hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.swaying-polaroid {
+  width: 100%;
+  max-width: 220px;
+  background: var(--ny-cream);
+  padding: 12px 12px 40px 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transform-origin: top center;
+  animation: swayPolaroid 6s ease-in-out infinite;
+}
+@keyframes swayPolaroid {
+  0% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+.hero-poetic-img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  filter: sepia(0.2) contrast(1.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.poetic-text-block {
+  text-align: center;
+  margin-top: 6vh;
+}
+.elegant-meta {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--ny-ochre);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.highlight-warm {
+  color: var(--ny-ochre);
+  font-style: italic;
+  font-weight: 400;
+}
+.main-sub {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--ny-latte);
+  opacity: 0.9;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.poetic-quote-section {
+  text-align: center;
+  padding: 0 10px;
+}
+.quote-vertical-divider {
+  width: 1px;
+  height: 50px;
+  background: var(--ny-terracotta);
+  margin: 0 auto 30px auto;
+  opacity: 0.5;
+}
+.prose-cozy {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.8;
+  font-style: italic;
+  color: var(--ny-ochre);
+  margin-bottom: 25px;
+}
+
+/* Subway Navigation */
+.subway-station-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.nav-hint-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ny-latte);
+  letter-spacing: 1px;
+}
+.subway-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+.subway-token-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+  text-decoration: none;
+  color: var(--ny-cream);
+  padding: 15px 20px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+}
+.subway-token-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--ny-terracotta);
+  transform: translateY(-3px);
+}
+.token-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: var(--ny-terracotta);
+  color: var(--ny-cream);
+  border-radius: 50%;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.token-text h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+.token-text p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ny-latte);
+  margin-top: 4px;
+}
+
+/* ============================================
+   GALLERY: THE HEART MURAL (ONE SCREEN)
+   ============================================ */
+.heart-mural-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.heart-mural-box {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+.heart-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke: rgba(138, 79, 53, 0.4);
+  stroke-width: 1.5;
+  fill: none;
+  stroke-dasharray: 6, 6;
+}
+.brick-node {
+  position: absolute;
+  width: 55px;
+  height: 35px;
+  background: var(--ny-terracotta);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
+  z-index: 2;
+}
+.brick-node:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+  background: var(--ny-ochre);
+}
+.brick-texture {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ny-cream);
+  letter-spacing: 1px;
+}
+.node-1 {
+  top: 30%;
+  left: 20%;
+}
+.node-2 {
+  top: 30%;
+  left: 80%;
+}
+.node-3 {
+  top: 55%;
+  left: 50%;
+}
+.node-4 {
+  top: 85%;
+  left: 50%;
+}
+
+/* ============================================
+   FULLSCREEN POLAROID MODAL
+   ============================================ */
+.polaroid-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.4s ease;
+}
+.polaroid-modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 15, 10, 0.92);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.modal-polaroid-frame {
+  position: relative;
+  z-index: 1;
+  background: var(--ny-cream);
+  padding: 15px 15px 45px 15px;
+  border-radius: 2px;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+.polaroid-modal:not(.hidden) .modal-polaroid-frame {
+  transform: scale(1) rotate(-1deg);
+}
+.modal-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 35px;
+  height: 35px;
+  background: var(--ny-terracotta);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.modal-close-btn:hover {
+  transform: scale(1.1);
+}
+.modal-polaroid-frame img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  filter: sepia(0.15) contrast(1.05);
+}
+.modal-caption {
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  color: var(--ny-mocha);
+  text-align: center;
+  margin-top: 15px;
+  line-height: 1.2;
+}
+
+.ambient-deco-footer {
+  text-align: center;
+  margin-top: 5vh;
+}
+.deco-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.deco-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0.6;
+  filter: grayscale(1);
+  transition: all 0.3s;
+}
+.deco-thumbnail:hover {
+  opacity: 1;
+  filter: grayscale(0) sepia(0.3);
+}
+.deco-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================
+   BIRTHDAY: THE DARK ROOM & LETTER
+   ============================================ */
+.lit-up {
+  background: var(--ny-cream);
+  color: var(--text-dark);
+}
+.lit-up .main-title {
+  color: var(--text-dark);
+}
+.lit-up .elegant-meta {
+  color: var(--ny-terracotta);
+}
+.dark-room-overlay {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: opacity 0.8s ease;
+  z-index: 10;
+  padding: 5vh 0;
+}
+.text-light {
+  color: var(--ny-cream) !important;
+}
+.candle-body-vntg {
+  width: 35px;
+  height: 110px;
+  background: linear-gradient(to right, #e2ded5, #ffffff, #cfcbc2);
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  margin: 0 auto;
+}
+.candle-wick-vntg {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 12px;
+  background: #444;
+}
+.candle-flame-vntg {
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 32px;
+  background: radial-gradient(
+    ellipse at bottom,
+    #fff,
+    #ffe066,
+    #ff9933,
+    transparent
+  );
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 35px 12px rgba(255, 153, 51, 0.6);
+  animation: candleWobble 0.1s infinite alternate;
+}
+.candle-flame-vntg.hidden {
+  display: none;
+}
+@keyframes candleWobble {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(-50%) scale(1.04) rotate(2deg);
+  }
+}
+
+/* The Letter */
+.illuminated-room-box {
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease 0.5s;
+}
+.illuminated-room-box:not(.hidden) {
+  opacity: 1;
+}
+.poetic-letter-body {
+  text-align: left;
+  margin-top: 6vh;
+}
+.poetic-letter-body p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 4vh;
+  color: var(--text-dark);
+}
+.touch-to-light-box {
+  position: relative;
+  background: var(--ny-espresso);
+  border-radius: 2px;
+  min-height: 120px;
+  margin: 6vh 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.touch-cover-mask {
+  position: absolute;
+  inset: 0;
+  background: var(--ny-mocha);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  cursor: pointer;
+  border: 1px dashed var(--ny-ochre);
+}
+.touch-cover-mask.extinguished {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.02);
+}
+.touch-revealed-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.art-photo-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 6vh;
+}
+.handholding-frame {
+  width: 50%;
+  max-width: 250px;
+  background: var(--ny-cream);
+  padding: 8px 8px 30px 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.handholding-frame img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  filter: sepia(0.15);
+}
+.tilt-left {
+  transform: rotate(-2deg);
+}
+.tilt-right {
+  transform: rotate(2deg);
+}
+.script-caption {
+  font-family: var(--font-script) !important;
+  font-size: 2rem !important;
+  color: var(--ny-terracotta) !important;
+  text-align: center;
+  margin-top: 20px;
+}
+.letter-final-sign {
+  font-family: var(--font-script) !important;
+  font-size: 2.5rem !important;
+  color: var(--ny-terracotta) !important;
+  text-align: right;
+  margin-top: 8vh;
+  line-height: 1 !important;
+}
+
+/* Letter Footer / Second Candle */
+.letter-footer-actions {
+  margin-top: 8vh;
+  padding-top: 6vh;
+  border-top: 1px dashed var(--ny-latte);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- UTILS --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   LILIN MELAYANG LOKAL (KIRI-KANAN SAJA)
+   ============================================ */
+.floating-candle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 30px auto;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.15));
+}
+.small-candle {
+  transform: scale(0.6);
+}
+
+/* Lilin 1 (Atas) */
+.candle-top {
+  animation: swayLocalTop 4s ease-in-out infinite alternate;
+}
+
+/* Lilin 2 (Bawah, background terang) */
+.candle-bottom {
+  animation: swayLocalBottom 5s ease-in-out infinite alternate-reverse;
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes swayLocalTop {
+  0% {
+    transform: translateX(-15px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(15px) rotate(2deg);
+  }
+}
+@keyframes swayLocalBottom {
+  0% {
+    transform: translateX(-15px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateX(15px) rotate(2deg);
+  }
+}
+
+/* ============================================
+   SURAT HARAPAN KECIL (INTERACTIVE ROLLED)
+   ============================================ */
+.secret-letters-section {
+  background: linear-gradient(to bottom, var(--ny-espresso), var(--ny-mocha));
+  padding: 50px 20px;
+  border-radius: 6px;
+  margin-top: 8vh;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--ny-terracotta);
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+  display: none;
+}
+.secret-letters-section.revealed {
+  display: block;
+  animation: smoothFadeUp 1.2s forwards;
+}
+
+@keyframes smoothFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rolled-letters-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.rolled-letter {
+  background: var(--ny-cream);
+  padding: 18px 25px;
+  border-radius: 4px;
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.05),
+    0 5px 15px rgba(0, 0, 0, 0.15);
+  border-left: 6px solid var(--ny-terracotta);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.rolled-letter:hover {
+  transform: translateY(-2px);
+  background: #fcf9f5;
+}
+
+/* Cover dari gulungan sebelum diklik */
+.letter-cover {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--text-dark);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 600;
+}
+.scroll-icon {
+  font-size: 1.3rem;
+  transition: transform 0.4s ease;
+}
+
+/* Isi dari gulungan */
+.letter-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.6s ease,
+    padding 0.6s ease,
+    opacity 0.6s ease,
+    margin 0.6s ease;
+}
+
+/* State ketika surat terbuka */
+.rolled-letter.open .scroll-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+.rolled-letter.open .letter-content {
+  max-height: 300px;
+  opacity: 1;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px dashed var(--ny-latte);
+}
+.rolled-letter p {
+  font-family: var(--font-body);
+  font-size: 1.15rem !important;
+  color: var(--text-dark) !important;
+  margin: 0 !important;
+  font-style: italic;
+  line-height: 1.6 !important;
+}
