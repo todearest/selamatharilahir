@@ -194,23 +194,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         document.title = dynamicDoc.title;
+
         const currentWrapper = document.getElementById("app-content");
         const freshContent = dynamicDoc.getElementById("app-content");
 
         if (currentWrapper && freshContent) {
+          // Ganti isi halaman
           currentWrapper.innerHTML = freshContent.innerHTML;
-          // Re-append the modal explicitly to the body context if we are on gallery
-          if (document.getElementById("polaroid-modal")) {
-            document.body.appendChild(
-              document.getElementById("polaroid-modal"),
-            );
+
+          // Hapus modal lama jika ada
+          const existingModal = document.getElementById("polaroid-modal");
+          if (existingModal) {
+            existingModal.remove();
+          }
+
+          // Ambil modal dari halaman tujuan (gallery.html)
+          const freshModal = dynamicDoc.getElementById("polaroid-modal");
+          if (freshModal) {
+            document.body.appendChild(freshModal);
           }
         }
 
         history.pushState(null, "", targetUrl);
         window.scrollTo({ top: 0, behavior: "auto" });
 
+        // Re-bind seluruh interaksi pada halaman baru
         bindInteractions();
+
         if (overlay) overlay.classList.remove("active");
       }, 500);
     } catch (error) {
